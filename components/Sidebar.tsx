@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage, isOpen, 
         className={`flex items-center px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200 ${
           isActive
             ? 'bg-primary-600 text-white shadow-md'
-            : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+            : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
         }`}
       >
         <item.icon className="w-5 h-5 mr-3" />
@@ -45,13 +45,13 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage, isOpen, 
   };
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-white shadow-lg">
-        <div className="flex items-center justify-between h-16 px-4 border-b">
+    <div className="flex flex-col h-full bg-white dark:bg-gray-800 shadow-lg">
+        <div className="flex items-center justify-between h-16 px-4 border-b dark:border-gray-700">
           <div className="flex items-center">
             <ChartPieIcon className="w-8 h-8 text-primary-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800">Zenith</span>
+            <span className="ml-2 text-xl font-bold text-gray-800 dark:text-white">Zenith</span>
           </div>
-          <button onClick={() => setOpen(false)} className="md:hidden text-gray-500 hover:text-gray-800">
+          <button onClick={() => setOpen(false)} className="md:hidden text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">
             <XIcon className="w-6 h-6" />
           </button>
         </div>
@@ -60,11 +60,11 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage, isOpen, 
             <NavLink key={item.page} item={item} />
           ))}
         </nav>
-        <div className="p-4 border-t">
-          <div className="p-4 rounded-lg bg-primary-50 text-center">
-            <h4 className="text-sm font-semibold text-primary-800">Need Help?</h4>
-            <p className="mt-1 text-xs text-primary-700">Check our documentation or contact support.</p>
-            <button className="mt-3 w-full bg-primary-600 text-white text-xs font-semibold py-2 rounded-md hover:bg-primary-700 transition">
+        <div className="p-4 border-t dark:border-gray-700">
+          <div className="p-4 rounded-lg bg-primary-50 dark:bg-primary-900 text-center">
+            <h4 className="text-sm font-semibold text-primary-800 dark:text-primary-100">Need Help?</h4>
+            <p className="mt-1 text-xs text-primary-700 dark:text-primary-200">Check our documentation or contact support.</p>
+            <button className="mt-3 w-full bg-primary-600 text-white text-xs font-semibold py-2 rounded-md hover:bg-primary-700 dark:hover:bg-primary-800 transition">
               Get Help
             </button>
           </div>

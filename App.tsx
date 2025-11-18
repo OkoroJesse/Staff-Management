@@ -1,5 +1,6 @@
 
 import React, { useState, useCallback } from 'react';
+import { useTheme } from './hooks/useTheme';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import DashboardPage from './pages/DashboardPage';
@@ -15,6 +16,7 @@ import { Page } from './types';
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('Dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleSetCurrentPage = useCallback((page: Page) => {
     setCurrentPage(page);
@@ -47,11 +49,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-gray-100 dark:bg-gray-950">
       <Sidebar currentPage={currentPage} setCurrentPage={handleSetCurrentPage} isOpen={sidebarOpen} setOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Navbar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4 md:p-8">
+        <Navbar onMenuClick={() => setSidebarOpen(true)} theme={theme} onThemeToggle={toggleTheme} />
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 dark:bg-gray-950 p-4 md:p-8">
           {renderPage()}
         </main>
       </div>

@@ -33,8 +33,8 @@ const DashboardPage: React.FC = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">Welcome back, Admin!</h1>
-        <p className="text-gray-500 mt-1">Here's what's happening with your team today.</p>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Welcome back, Admin!</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Here's what's happening with your team today.</p>
       </div>
       
       {/* Stat Cards */}
@@ -47,11 +47,11 @@ const DashboardPage: React.FC = () => {
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        <div className="lg:col-span-3 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-          <h3 className="font-semibold text-gray-800 mb-4">Staffing Trends</h3>
+        <div className="lg:col-span-3 bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h3 className="font-semibold text-gray-800 dark:text-white mb-4">Staffing Trends</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={staffData}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
               <XAxis dataKey="name" tick={{ fill: '#6b7280', fontSize: 12 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: '#6b7280', fontSize: 12 }} axisLine={false} tickLine={false} />
               <Tooltip contentStyle={{ backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '0.5rem' }} />
@@ -61,8 +61,8 @@ const DashboardPage: React.FC = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-          <h3 className="font-semibold text-gray-800 mb-4">Department Distribution</h3>
+        <div className="lg:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h3 className="font-semibold text-gray-800 dark:text-white mb-4">Department Distribution</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie data={departmentData} cx="50%" cy="50%" labelLine={false} outerRadius={110} fill="#8884d8" dataKey="value" nameKey="name" >
@@ -76,11 +76,11 @@ const DashboardPage: React.FC = () => {
           </ResponsiveContainer>
         </div>
       </div>
-       <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-          <h3 className="font-semibold text-gray-800 mb-4">Weekly Attendance</h3>
+       <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h3 className="font-semibold text-gray-800 dark:text-white mb-4">Weekly Attendance</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={attendanceData}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
               <XAxis dataKey="name" tick={{ fill: '#6b7280', fontSize: 12 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: '#6b7280', fontSize: 12 }} axisLine={false} tickLine={false} />
               <Tooltip contentStyle={{ backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '0.5rem' }} />

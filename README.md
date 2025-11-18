@@ -1,20 +1,73 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Zenith - Staff Management Dashboard
 
-# Run and deploy your AI Studio app
+A modern, responsive staff management dashboard built with React, TypeScript, and Tailwind CSS. This application provides comprehensive HR management features including staff directory, attendance tracking, leave management, payroll, and more.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1QsB8JoBmpMXhm0ol4RozNSgR9LV3Bb2J
+- **Dashboard** - Overview with key metrics and charts
+- **Staff Directory** - Searchable staff list with filtering
+- **Staff Profiles** - Detailed employee information with multiple views
+- **Attendance** - Track daily attendance logs
+- **Leave Management** - Manage leave requests and approvals
+- **Payroll** - Salary management and payslip generation
+- **Tasks** - Task assignment and tracking
+- **Settings** - Application configuration and preferences
+- **Dark Mode** - Full dark mode support for better accessibility
+- **Responsive Design** - Works seamlessly on desktop and mobile
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend Framework:** React 19.2
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **Charts:** Recharts
+- **Node.js:** Required for development
 
+## Prerequisites
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Node.js (v16 or higher)
+- npm or yarn
+
+## Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd Staff-Management
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000`
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## Project Structure
+
+```
+├── components/        # Reusable UI components
+├── pages/            # Page components
+├── types.ts          # TypeScript type definitions
+├── App.tsx           # Main application component
+├── index.tsx         # Entry point
+├── vite.config.ts    # Vite configuration
+└── tsconfig.json     # TypeScript configuration
+```
+
+## License
+
+This project is open source and available under the MIT License.
+
